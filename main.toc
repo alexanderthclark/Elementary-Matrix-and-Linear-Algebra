@@ -1,3 +1,0 @@
-\babel@toc {english}{}
-\contentsline {section}{\numberline {1}Discussion Stuff}{}
-\contentsline {section}{\numberline {2}Midterm Stuff}{}
