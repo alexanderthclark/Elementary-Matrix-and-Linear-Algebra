@@ -1,0 +1,230 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 2}
+
+
+1.) Solve the following system of equations by writing it in the form $Ax=b$ and solve using matrix multiplication.
+
+$$2x+y=4$$
+$$x+2y=5$$
+
+2.) Suppose there is a function $f:\mathbb{R}^n \rightarrow \mathbb{R}^2$ defined by $f(x)=Ax$.  
+
+We know $Au=\left(\begin{array}{c}
+1 \\
+1 \\
+\end{array}\right)$ and $Av=\left(\begin{array}{c}
+-1 \\
+-1 \\
+\end{array}\right)$. 
+
+Show that $\left(\begin{array}{c}
+0 \\
+0 \\
+\end{array}\right)$ is in the image of the function $f(x)=Ax$. 
+
+\pagebreak
+
+\textbf{Row operations and reduced row echelon form.}
+
+\bigskip{}
+
+1.) Assuming invertibility, show $(ABCD)^{-1}=D^{-1}C^{-1}B^{-1}A^{-1}$
+\smallskip
+
+2.) True or false? For any elementary matrix $E$, $E=E^{-1}$.
+
+\smallskip
+
+3.) Which of these matrices are in reduced row echelon form? Reduce the matrices not already in reduced form.
+\smallskip
+
+$A= \left[\begin{array}{cccc}
+1 & 0 & 3 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right]$ $B= \left[\begin{array}{cccccc}
+1 & 1 & 1 & 1 & 1 & 1\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 2 & 3\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$ 
+
+$C= \left[\begin{array}{ccccc}
+0 & 1 & 0 & 3 & 4\\
+0 & 0 & 1 & 5 & 6
+\end{array}\right]$ $D= \left[\begin{array}{cccccc}
+1 & 0 & 1 & 0 & 1 & 0\\
+0 & 1 & 1 & 0 & 2 & 1\\
+0 & 0 & 0 & 1 & 3 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{array}\right]$
+
+
+
+\bigskip{}
+
+4.) Let $A$ be a square matrix. Show that if a sequence of elementary row operations that when applied successively to $A$ yield the identity matrix, then the same operations applied in the same order to $I$ yield $A^{-1}$.
+
+5.) Show that if a matrix $A$ is row equivalent to an inverse matrix, then it must be nonsingular.
+\pagebreak
+
+\textbf{Solutions}
+
+\medskip{}
+
+1.) Assuming invertibility, show $(ABCD)^{-1}=D^{-1}C^{-1}B^{-1}A^{-1}$
+\smallskip
+
+\it
+We say $Y=X^{-1}$ if $XY=I$. 
+
+We can check the product, $ABCD(D^{-1}C^{-1}B^{-1}A^{-1})$. This will collapse from the inside.
+
+$$ABCD(D^{-1}C^{-1}B^{-1}A^{-1}) = ABCIC^{-1}B^{-1}A^{-1} = \cdots = I.$$
+Note this also works if we reverse the order of multiplication. 
+$$(D^{-1}C^{-1}B^{-1}A^{-1}) ABCD = D^{-1}C^{-1}B^{-1}IBCD = \cdots = I.$$
+
+
+Therefore, $D^{-1}C^{-1}B^{-1}A^{-1}$ must be the inverse of $ABCD$. We can also show this by applying the rule $(XY)^{-1}=Y^{-1}X^{-1}$ twice. Let $X=AB$ and $Y=CD$. We obtain an inverse $(CD)^{-1}(AB)^{-1}=D^{-1}C^{-1}B^{-1}A^{-1}$.
+\rm
+
+2.) True or false? For any elementary matrix $E$, $E=E^{-1}$.
+
+\it
+False. Swap matrices can be their own inverse, but this isn't true for the matrices we use to represent multiplying a row by a constant. 
+\rm
+
+\smallskip
+
+3.) Which of these matrices are in reduced row echelon form? Reduce the matrices not already in reduced form.
+\smallskip
+
+$A= \left[\begin{array}{cccc}
+1 & 0 & 3 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right]$ $B= \left[\begin{array}{cccccc}
+1 & 1 & 1 & 1 & 1 & 1\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 2 & 3\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$ 
+
+$C= \left[\begin{array}{ccccc}
+0 & 1 & 0 & 3 & 4\\
+0 & 0 & 1 & 5 & 6
+\end{array}\right]$ $D= \left[\begin{array}{cccccc}
+1 & 0 & 1 & 0 & 1 & 0\\
+0 & 1 & 1 & 0 & 2 & 1\\
+0 & 0 & 0 & 1 & 3 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{array}\right]$
+
+
+
+\bigskip{}
+
+\it $C$ and $D$ are already reduced. $A$ and $B$ must be reduced further.
+
+$$A_{r_1-3r_2\rightarrow r_1}= \left[\begin{array}{cccc}
+1 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+
+We need several steps for $B$. First we replace row 1 with row 1 minus row 2, $BB_{r_1-r_2\rightarrow r_1}$.
+$$W = B_{r_1-r_2\rightarrow r_1}= \left[\begin{array}{cccccc}
+1 & 1 & 0 & 1 & 1 & 1\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 2 & 3\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$ 
+Then we substract row 3 from row 1 to eliminate the nonzero above a leading one in the fourth column. 
+
+$$X = W_{r_1-r_3\rightarrow r_1} = \left[\begin{array}{cccccc}
+1 & 1 & 0 & 0 & -1 & -2\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 2 & 3\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$ 
+
+Let's get rid of the 2, entry $(3,5)$, by substracting 2 times row 4 from frow 3
+
+$$Y = X_{r_3-2r_4\rightarrow r_3} = \left[\begin{array}{cccccc}
+1 & 1 & 0 & 0 & -1 & -2\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 1\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$ 
+
+$$Z = Y_{r_1+r_4\rightarrow r_1} = \left[\begin{array}{cccccc}
+1 & 1 & 0 & 0 & 0 & -2\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 1\\
+0 & 0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$ 
+
+Now we have to get rid of the entries in the last column $(1,6), (3,6), \text{ and, } (4,6)$. Let's combine a few steps. We can do that by adding or subtracting the last row with the others.
+$$B_{rref} = Z_{r_1+2r_5\rightarrow r_1,r_3-r_5\rightarrow r_3, r_4-r_5\rightarrow r_4 } = \left[\begin{array}{cccccc}
+1 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$ 
+
+\rm
+
+\medskip{}
+
+4.) Let $A$ be a square matrix. Show that if a sequence of elementary row operations that when applied successively to $A$ yield the identity matrix, then the same operations applied in the same order to $I$ yield $A^{-1}$.
+
+
+
+\it
+We know $E_1 \cdots E_n A = I$. 
+
+We want something like $E_1 \cdots E_n I = A^{-1}$.
+
+If you wanted to work backwards, you could multiply both sides, from the right, by $A$. 
+
+$$E_1 \cdots E_n I A= A^{-1}A = I$$
+
+And that's exactly what we wanted. The above reduces to $E_1 \cdots E_n  A=  I$
+
+\rm
+
+5.) Show that if a matrix $A$ is row equivalent to an inverse matrix, then it must be nonsingular.
+
+
+\it
+
+$A=\hat{E}B^{-1}=E_1\cdots E_n B^{-1}$
+
+We invert the right hand side. 
+
+$\left[\hat{E}B^{-1}\right]^{-1} = BE_n^{-1}\cdots E_1^{-1}$
+
+We know each of these inverses exist because elementary matrices are invertible. Therefore, $A^{-1}$ exists and  $A^{-1}=BE_n^{-1}\cdots E_1^{-1}.$
+
+\end{document}
+
+Can a matrix with a row of all zeroes have an inverse?

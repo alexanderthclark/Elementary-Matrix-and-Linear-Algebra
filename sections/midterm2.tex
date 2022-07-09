@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+%\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\textbf{Midterm II Solution Sketches for Pages 4 and 5}\footnote{I just made these to help me grade. Don't expect anything polished.}
+\end{center}
+
+4.) 
+
+(a) The rank of a matrix is the number of LI rows or columns. 
+
+(b) set of linear combos
+
+(c) number of vectors in a basis
+
+(d) Subset of vector space that is closed under the addition and scalar multiplication operations. 
+
+
+(e) 
+
+
+5.) Rank + Nullity = No. of Columns
+
+6.) 
+
+a.) We Want $\langle x+k, x^2\rangle=0$.
+
+$$\int_{-1}^1 (x+k)x^2dx = \int_{-1}^1 x^3+kx^2dx$$
+
+$$=\frac{1}{4}x^4 + \frac{k}{3}x^3\bigg\rvert_{-1}^1$$
+
+$$=(\frac{1}{4}+\frac{k}{3})-(\frac{1}{4}-\frac{k}{3})$$
+
+$$=\frac{2k}{3}$$
+
+$$\implies k=0.$$
+
+%$x \times x^2$ is an odd function, so it will integrate to zero on $[-1,1]$
+
+b.) We know $x^2$ is parallel to $\alpha x^2$ for any scalar $\alpha\in\mathbb{R}$. So, we simply solve for $\alpha$ so that $\langle \alpha x^2, \alpha x^2 \rangle =1$.
+
+$$\int_{-1}^{1} \alpha^2 x^4 dx = \alpha^2 \frac{1}{5}x^5\bigg\rvert_{-1}^1$$
+
+$$=\frac{1}{5}(\alpha^2 +\alpha^2)$$
+
+So we solve $\frac{2}{5}\alpha^2 = 1$. 
+
+$$\alpha^2 = \frac{5}{2} \implies \alpha = \pm \frac{\sqrt{5}}{\sqrt{2}}.$$
+
+You can also try to find a polynomial so that $\cos \theta = \pm 1$. 
+
+
+c.) This question asks if the angle is obtuse. An angle is obtuse when the inner product is negative. So we check $\langle x+1, x^2 \rangle$. 
+
+Recall that $\langle x, x^2 \rangle=0$. Using the properties of inner products,
+
+$$\langle x+1, x^2 \rangle = \underbrace{\langle x, x^2 \rangle}_{\mathclap{=0}} + \langle 1, x^2 \rangle$$
+
+So we only have to check $\int_{-1}^1 x^2 dx$. Because $x^2\geq 0$, $\int x^2$ is always positive over a nondegenerate interval. Therefore, the angle is acute. Therefore, the angle is less than $\frac{\pi}{2}$. 
+
+\end{document}
+\left[\begin{array}{cc}
+1 & 2\\
+-1 & 4\\
+3 & 1
+\end{array}\right]

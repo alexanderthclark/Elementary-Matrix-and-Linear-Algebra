@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 9}
+
+1.) Find a basis for the null space of the matrix $A$. 
+
+$$ A= \left[ \begin{array}{ccc}
+1 & -1 & 0\\
+-1 & 1 & 0
+\end{array}\right]$$
+
+2.) What is the rank of the $2\times9$ matrix, $\Pi$?
+
+$$ \Pi= \left[ \begin{array}{ccccccccc}
+3 & 1 & 4 & 1 & 5 & 9 & 2 & 6 & 5\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}\right]$$
+
+\pagebreak
+\textbf{Not Quiz 9}
+
+An inner product satisfies
+
+\begin{itemize}
+\item[i.)] $\langle a,b \rangle= \langle b,a \rangle$
+\item[ii.)] $\langle ra,b \rangle = r\langle a,b \rangle= \langle a,rb \rangle$
+\item[iii.)] $\langle a,b+c \rangle = \langle a,b \rangle + \langle a,c \rangle$ and $\langle a+c,b \rangle = \langle a,b \rangle + \langle c,b \rangle$
+\item[iv.)] $\langle a,a \rangle \geq 0$ and with equality if and only if $a=\mathbf{0}$.
+\end{itemize}
+\bigskip
+
+We mostly use the dot product, which is an inner product.\\
+\qquad \textbf{\emph{Important property}}: $a\cdot b = \Vert a\Vert \Vert b \Vert \cos(\theta)$. 
+\smallskip{}
+
+\textbf{\emph{Implication}}: Nonzero $a$ and $b$ are perpendicular if $a\cdot b = 0$. If $a,b$ form an acute (obtuse) angle, the dot product is positive (negative).
+\smallskip{}
+
+\textbf{\emph{Another Property}}: An orthogonal (perpendicular) set of nonzero vectors in an inner product space is linearly independent.\footnote{This is a homework question.}
+
+\smallskip
+a.) Verify that $\langle f(x),g(x) \rangle = \int_{-1}^{1} f(x)g(x) dx$ is an inner product on the $P_k$, real valued polynomials of degree $k$. Verify that $f(x)=1$ and $g(x)=x$ are ``perpendicular.'' Show $x$ and $2x$ have a nonzero inner product, so they are not perpendicular.
+
+b.) \emph{Different Bases Give Different Inner Products}
+
+Consider $a=(1,0)$ and $b=(0,1)$. Show that these vectors are perpendicular, using the dot product. 
+
+
+Find the coordinates $a$ and $b$ if we use $\{(1,0),(1,1)\}$ as a basis for $\mathbb{R}^2$. Now find the inner product of the vectors constructed with the new coordinates. 
+
+c.) Find the angle between $(2,1)$ and $(2,2)$. Find the angle between $(3,4)$ and $(5,12)$. Find the angle between $(1,1)$ and $(-5,-5)$. 
+
+d.) Find a vector $v$ that is orthogonal to any vector in the subspace spanned by $(1,1,0)$ and $(2,0,0)$.
+
+e.) Show that if $a\cdot b=0$ and $a\cdot c=0$, then $a$ is orthogonal to any vector $v\in \text{Span}(b,c)$. 
+
+HW32.) Let $u$ be a fixed vector in $\mathbb{R}^n$. Prove that the set of all vectors $v$ such that $u \cdot v =0$is a subspace of $\mathbb{R}^n$.
+
+\pagebreak
+\textbf{Not Quiz 9 Solutions}
+
+
+a.) Commutativity: $f(x)g(x)=g(x)f(x)$ so, $\int f(x)g(x) dx = \int g(x)f(x) dx$.
+
+Scalars: $r\int f(x)g(x)dx = \int rf(x)g(x)dx = \int f(x)rg(x) dx = \langle rf(x),g(x) \rangle = \langle f(x), rg(x)\rangle.$
+
+Distribution of addition: $\langle f(x), h(x)+g(x)\rangle = \int f(x)h(x) + f(x)g(x)dx = \int f(x)h(x) dx + \int f(x)g(x) dx = \langle f(x), h(x)\rangle + \langle f(x), g(x)\rangle.$
+
+Nonnegativity: $f(x)f(x)=f(x)^2 \geq 0 $ so $\langle f(x), f(x)\rangle \geq 0$.
+
+\medskip
+
+b.) $a\dot b = 1\times 0 + 0 \times 1= 0 \implies a\perp b$.
+
+For any vector $v=(v_1, v_2)$, it will have new coordinates $(v_1-v_2, v_2)$. Therefore, $a \sim (1,0)$ and $b\sim (-1,1)$. The new inner product is $(1,0)\cdot (-1,1) = -1$. 
+
+c.) $(2,1) \cdot (2,2) = 4 +2 = 6 =  \Vert (2,1) \Vert \Vert (2,2) \Vert \cos(\theta)$
+
+We can compute $\Vert (2,1) \Vert  = \sqrt{5}$ and $\Vert (2,2) \Vert = \sqrt{8}$.
+
+Then $6 = \sqrt{40} \cos (\theta)$. So, $\theta = \arccos \frac{3}{\sqrt{10}}$
+
+
+For $(3,4)$ and $(5,12)$, we can calculate respective norms 5 and 13. 
+
+Thus $(3,4)\cdot(5,12) =15+48=63= 5\times 13 \times \cos (\theta) $.
+
+Thus $\theta = \arccos \frac{63}{65}$.
+
+
+For $(1,1)$ and $(-5,-5)$, we might note these are parallel and form an angle of $\pi$. Let's verify. 
+
+
+$(1,1)\cdot (-5,-5) = -10 = \sqrt{2}\sqrt{50}\cos (\theta)$
+
+Then $\cos(\theta) = -1 \implies \theta = \pi$. 
+
+d.) The spanned subspace is the set of all vectors $(x,y,z)$ with $z=0$. Then, an orthogonal vector will be a multiple of $(0,0,1)$. 
+
+e.) If $u\in \text{Span}(b,c)$, Then $u = \omega_1 b + \omega_2 c$. 
+
+We check $a \cdot u$. We obtain $\sum_{i=1}^n a_i u_i = \sum_{i=1} a_i(\omega_1 b_i + \omega_2 c_i) = \omega_1\sum_{i=1}^n a_i b_i + \omega_2 \sum_{i=1}^n a_i c_i = \omega_1(0) + \omega_2(0).$ 
+
+\pagebreak
+
+c.) Find the column space and null space of 
+
+$$ A= \left[ \begin{array}{cc}
+1 & 0 \\
+1 & 0
+\end{array}\right].$$
+
+Find also a basis for each space. 
+
+
+
+Null space of $\Pi$, We have hyperplane $3x_1 + 1x_2 + \cdots 6x_8 = 5$.
+
+That will have dimension $7$. 
+
+\pagebreak
+
+
+\pagebreak
+
+Since the first midterm, main topics have included vectors spaces and subspaces, linear independence, span, bases, null spaces, isomorphisms, and  dimensionality. 
+
+
+Suppose you have to allocate your money across $n$ risky assets. For example, you can spend all of your money printing Wisconsin 2018 NCAA Basketball Champions shirts. Selling those will be profitable in one state of the world, but unprofitable in the state of the world where Georgetown wins. Or you could hide your money under your mattress and hope your house doesn't burn down. Let a risky asset be represented by an $m\times 1$ vector, $\mathbf{a}$, where $a_i$ gives the return on your investment in state $i$. For the hiding-your-money-under-your-mattress asset, we might let $m=2$ and represent it as $\mathbf{a}=\left(\begin{array}{c} 
+0\\
+-1  \end{array}\right)$, where $a_1$ corresponds to state 1, no fire and no loss nor gain, and $a_2$ corresponds to state $2$, fire and a 100\% loss.
+
+\bigskip
+
+a.) Suppose all $n$ assets are linearly independent. Can you design a \emph{riskless portfolio} $\mathbf{x}=\left( x_i \right)_{i=1}^n$, giving the share of your wealth in each asset, that assures you of a return of 0 in all $m$ states? Note for this to be a sensible portfolio, we must have $\sum_{i=1}^n x_i=1$. 
+
+\bigskip{}
+
+b.) We know the null space of a matrix $A$ is a subspace. For an asset matrix $A$, will the set of riskless portfolios be a subspace? What if instead of giving of defining portfolio as a vector $\mathbf{x}$ giving the fraction of wealth in each asset, we define a portfolio as vector $\mathbf{y}$ giving the dollars invested in each asset and allow portfolios to vary in size? Assume a negative investment is possible (selling the asset). 
+
+\pagebreak
+
+I wrote that $\langle a,b \rangle \geq 0$. This is not true! In fact, if $a$ and $b$ form an obtuse angle, and we use the dot product, then the inner product will be negative. 
+
+Instead, I should have written $\langle a, a \rangle \geq 0$. 
+
+
+
+
+\end{document}
+

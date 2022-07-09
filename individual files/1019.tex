@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 6}
+
+1.) Give an example of two vectors in $\mathbb{R}^2$ that are equal and have different tails. 
+
+2.) Let $\vec{PQ}$ have tail $(1,0)$ and head $(2,1)$.
+
+Let $\vec{PS}$ have tail $(1,0)$ and head $(2,-1)$.
+
+Draw these vectors in a graph and argue they are not equal.
+
+
+\pagebreak
+
+\textbf{Not Quiz 6}
+
+a.) Let $\mathbb{R}_{++}$ be the set of all strictly positive real numbers and define, for $x,y\in \mathbb{R}_{++}$ a vector sum by $$x \oplus y = x \cdot y,$$
+
+where the product on the right is the usual product of numbers. If $a$ is a real number and $x\in\mathbb{R}_{++}$ define
+
+$$a \odot x = x^a.$$
+
+Is this a vector space?
+
+b.) Which of the following are subspaces?
+
+\begin{enumerate}
+\item $\{ (x_1, x_2, x_3)\in \mathbb{R}^3 \mid x_1 = 0\}$
+\item $\{ (x_1, x_2, x_3)\in \mathbb{R}^3 \mid x_2 = 0\}$
+\item $\{ (x_1, x_2, x_3)\in \mathbb{R}^3 \mid x_1+x_2 = 0\}$
+\item $\{ (x_1, x_2, x_3)\in \mathbb{R}^3 \mid x_1+x_2 = 1\}$
+\item $\{ (x_1, x_2)\in \mathbb{R}^2 \mid x_1 \geq 0\}$
+
+
+
+
+\end{enumerate}
+
+c.) Consider $\mathcal{U}\in \mathbb{R}^n$, the subset consisting of all vectors $a$ with the property $a_1+a_2+\dots a_n=0$. Define $\oplus$ and $\cdot$ as the usual vector addition and scalar multiplication:
+
+$$a\oplus b = (a_1+b_1, \dots, a_n + b_n),$$
+
+$$c\odot a = (ca_1, \dots ca_n).$$
+
+Show this is a subspace of $\mathbb{R}^n$. 
+
+d.) (4.3 HW37) Which of the following points are on the line
+
+$$x = 4-2t$$
+$$y = -3+2t$$
+$$z=4-5t$$
+
+\begin{enumerate}
+\item[i] (0,1,-6)
+\item[ii] (1,2,3)
+\item[iii] (4,-3,4)
+\item[iv] (0,1,-1)
+\end{enumerate}
+
+e.) What is the span of $\{1-x, 1+x\}$ in the set of polynomials of degree one?
+
+
+
+\pagebreak
+\textbf{Solution sketches to Not Quiz 6}
+
+a.) Yes. 
+\begin{enumerate}
+\item $\oplus$ is commutative because the normal multiplication $\cdot$ is. 
+\item $\oplus$ is associative because multiplication $\cdot$ is. 
+\item Here the additive identity is $1$, $x\oplus 1=x$.
+\item The additive inverse of $x$ is $\frac{1}{x}$. $x\oplus 1/x=1=$the additive identity. 
+
+\item $c\odot (x\oplus y) = (x\dot y)^c = x^c y^c = c\odot x \oplus c\odot y$
+
+\item $(c+d)\odot x = x^{c+d} = x^c \cdot x^d = c\odot x \oplus d\odot x$
+
+\item $c\odot (d\odot x) = {(x^d)}^c = x^{cd} = (cd)\odot x$
+
+\item $1\odot x = x^1 = x$.
+\end{enumerate}
+We've now verified the eight properties of a vector space.
+
+\bigskip
+
+b.) We check closure of addition and multiplication by a scalar. We assume the normal addition and multiplication operations. 
+\begin{enumerate}
+\item yes
+\item yes
+\item Yes. Observe $c(x_1+x_2)=c0=0$, so $c\vec{x}$ is in the proposed set for any $c\in\mathbb{R}$. If we add two vectors, $x$ and $y$, then $(x_1+y+1)+(x_2+y_2)=(x_1+x_2)+(y_1+y_2)=0+0$, so the set is closed under addition. 
+\item No, this is not closed under scalar multiplication. 
+\item No, the set is not closed under scalar multiplication (of a negative). 
+\end{enumerate}
+
+\bigskip
+
+c.) As before, we check closure under addition and scalar multiplication. 
+
+\begin{enumerate}
+\item Let $u=a\oplus b = (a_1+b_1, \dots, a_n + b_n)$ Then $u_i=a_i+b_i$ for $i=1,2,\dots,n$. Now we check if $\sum_{i=1}^n u_i = 0$. Observe $\sum_{i=1}^n u_i = \sum_{i=1}^n a_i+b_i =\sum_{i=1}^n a_i +\sum_{i=1}^n b_i = 0 + 0$. Thus, this space is closed under addition.
+\item For $c\odot a$, We have to check if $\sum_{i=1}^n ca_i$ is equal to zero. $\sum_{i=1}^n ca_i = c\sum_{i=1}^n a_i = c0=0$. So, the space is closed under multiplication. 
+\end{enumerate}
+
+We now know that this is a subspace.
+
+\bigskip
+d.) HW
+
+\bigskip
+e.) The span is the set of all polynomials of degree one. Observe that the coefficient vectors are $\left( \begin{array}{c}
+-1\\
+1
+\end{array}\right)$ and $\left( \begin{array}{c}
+1\\
+1
+\end{array}\right)$. These are linearly independent, so they would span the entire space of $\mathbb{R}^2$. This means we can pick any coefficient vector $\left( \begin{array}{c}
+\alpha \\
+\beta
+\end{array}\right)$ in $\mathbb{R}^2$ we want and and produce it as a linear combination of $\left( \begin{array}{c}
+-1\\
+1
+\end{array}\right)$ and $\left( \begin{array}{c}
+1\\
+1
+\end{array}\right)$. This corresponds to saying we can pick any polynomial $\alpha x +\beta$ and represent it as a linear combination of $1-x$ and $1+x$.
+
+\end{document}
+
+
+have a upper tri submatrix for cofactor ease
+Find det of .5*swap*

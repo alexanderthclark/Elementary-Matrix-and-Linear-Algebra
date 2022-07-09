@@ -1,0 +1,217 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 4}
+
+
+1.) Compute the inverse of the following matrix. Show all of your work. 
+
+$$A=\left[\begin{array}{ccc}
+\frac{1}{2} & 0 &  0\\
+0 & 0 & \frac{1}{2}\\
+0 & \frac{1}{2} & 0
+\end{array}\right]$$
+\medskip
+
+
+2.) 
+
+$$B=\left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right] \text{ and } C=\left[\begin{array}{ccc}
+2 & 0 &  0\\
+0 & 1 & 1\\
+0 & 1 & 2
+\end{array}\right]$$
+
+What is the determinant of B? What is the determinant of $C$? Explain how you can calculate the determinant of $C$ using the properties of determinants and row operations.   
+
+\pagebreak
+
+\textbf{Not quiz 4: Elementary Ops, Inverses, but mostly Determinants}
+
+
+a.) Factor $G=\left[\begin{array}{ccc}
+0 & 1 &  1\\
+1 & 0 & 1\\
+1& 1 & 0
+\end{array}\right]$ into the product of elementary matrices.
+
+
+b.) We discussed the determinant as a function that spits out a number after you feed it a matrix. What is the image (values the function will actually take) of this determinant function if the domain is all non-singular matrices?
+
+c.) Let $A$ be a special kind of matrix, $A^2=A$. Can the determinant be zero? Can you find possible determinant value(s) for these kinds of matrices?\footnote{This is called an idempotent matrix, but that's not the point.}
+
+\medskip
+
+d.) Find the determinant of:
+
+$A = \left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right] + \left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right]$
+
+$B = \left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 0\\
+0 & r & 1
+\end{array}\right]$ where $r\in \mathbb{R}$.
+
+
+We can say that the determinant behaves like a linear function \emph{on the rows} of a matrix. Can you provide an example of this by expressing det($B$) as a sum of two determinants?
+
+e.) Suppose $A$ is a square, $n\times n$ matrix. What is the determinant of $tA$? 
+
+
+f.) Consider matrices: 
+
+$$A = \left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right] \text{ and } B=\left[\begin{array}{ccc}
+1 & 0 &  0\\
+0 & 1 & 1\\
+0 & 1 & 1
+\end{array}\right].$$
+
+Billy claims both have the same determinant because $B$ was obtained by adding row 2 to row 3 and row 3 to row 2. Is he right?$^{(no)}$ What is his mistake?
+
+HW30.) Let $A$ be a $3\times 3$ matrix with det($A$)=3. What is the rref to which $A$ is row equivalent? How many solutions does the homogeneous system $Ax=0$ have?
+
+\pagebreak{}
+
+\textbf{Solutions}
+
+a.) This is nonsingular so it will be row equivalent to the identity matrix. 
+
+$G=\hat{E}I = \hat{E}=E_1\cdots E_n.$
+
+$H=G_{r_3+r_2\rightarrow r_2} = \left[\begin{array}{ccc}
+0 & 1 &  1\\
+2 & 1 & 1\\
+1& 1 & 0
+\end{array}\right] $
+
+$J=H_{r_1+r_3\rightarrow r_3} = \left[\begin{array}{ccc}
+0 & 1 &  1\\
+2 & 1 & 1\\
+1& 2 & 1
+\end{array}\right] $
+
+
+$K=J_{(r_2-r_1)/2\rightarrow r_2} = \left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 0\\
+1& 2 & 1
+\end{array}\right]$
+
+$L=K_{r_3-r_2-r_1\rightarrow r_3} = \left[\begin{array}{ccc}
+0 & 1 & 1 \\
+1 & 0 & 0\\
+0& 1 & 0
+\end{array}\right]$
+
+$M=L_{r_1-r_3-\rightarrow r_1} = \left[\begin{array}{ccc}
+0 & 0 & 1 \\
+1 & 0 & 0\\
+0& 1 & 0
+\end{array}\right]$
+
+$N=L_{r_1\leftrightarrow r_2 \text{ then } r_2 \leftrightarrow r_3} = \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+0& 0 & 1
+\end{array}\right]$
+
+So the elementary matrices describe these operations. 
+
+
+$G=\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 1\\
+0& 0 & 1
+\end{array}\right] 
+\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+1& 0 & 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+-1/2 & 1/2 & 0\\
+0& 0 & 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+-1& -1 & 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 & 0 & -1 \\
+0 & 1 & 0\\
+0& 0 & 1
+\end{array}\right] \left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0\\
+0& 0 & 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 0 & 1\\
+0& 1 & 0
+\end{array}\right]$
+
+$G$ = (add rows)(add rows)(subtract and scale)(subtract rows)(subtract rows)(swap)(swap).
+
+You may find a different answer that is still equivalent. 
+
+b.) $\mathbb{R}\setminus \{0\}$, the reals except zero.
+
+c.) The determinant must be one. The most direct way is using properties:
+
+i.) det($AB$)=det($A$)det($B$)
+
+ii.) det($A^{-1}$)= det($A$)$^{-1}$
+
+Note $A=A^{-1}$. Then det($AA$) =det($A$)/det($A$) = det($I$) = 1 $\implies$ det($A$)=1.
+
+d.) det($A$)=8
+
+det($B$)=1
+
+$\vert B\vert =\left\vert \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+0& 0 & 1
+\end{array}\right\vert  + \left\vert \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+0& r & 0
+\end{array}\right\vert = 1 + 0.$
+
+e.) $t^n$det($A$).
+
+f.) He added rows not in sequence. 
+
+HW30.) It's homework.
+
+
+
+
+
+
+\end{document}

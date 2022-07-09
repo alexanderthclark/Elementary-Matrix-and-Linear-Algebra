@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 12}
+
+
+1.) Let $\langle \cdot, \cdot \rangle$ be an inner product (do not assume it is the dot product). Is the following function a linear transformation? $L:\mathbb{R}\rightarrow \mathbb{R}$, 
+
+$$L(x) = \langle x, 91\rangle .$$
+
+
+
+2.) Let $A$ and $B$ be square matrices. Show that if $B$ is similar to $A$, then $A$ is similar to $B$. 
+
+
+\pagebreak
+\textbf{Not Quiz 12}
+
+Quiz before I made it a little easier.) Let $\langle \cdot, \cdot \rangle$ be an inner product. Is the following function a linear transformation? $L:\mathcal{V}\rightarrow \mathbb{R}$, 
+
+$$L_y(x) = \langle x, y\rangle .$$
+
+a.) Is $L(x,y) = \sqrt{xy}$ a linear transformation?
+
+b.) Is $H(x,y) = \langle x, y \rangle $ a linear transformation?
+
+c.) Is $T(x,y,z) = 91$ a linear transformation? 
+
+d.) Let $L:P_2\rightarrow P_1$ be the linear transformation defined by $$L(at^2 + bt + c) = (a+b)t + (b-c).$$ Find a basis for ker and range $L$. 
+
+e.) \emph{HW25 from 6.3} Let $L:\mathbb{R}^4 \rightarrow \mathbb{R}^6$ be a linear transformation. If dim ker $L=2$, find dim range $L$? If dim range $L=3$, what is dim ker $L$?
+
+
+f.) Let $T(x,y,z) = (x+y, y+z)$. Calculate the matrix of $T$ relative to the standard bases of $\mathbb{R}^3$ and $\mathbb{R}^2$. Then, relative to the bases $\{(1,0,0), (0,0,1), (1,-1,1)\}$ and $\{(1,0), (0,1)\}$. 
+%p163 in smith
+
+g.) Find the value of $T(1,1,-1)$ for the linear transformation $T: \mathbb{R}^3$ whose matrix relative to the standard basis and $\{1, x, x^2\}$ is 
+
+$$\left[ \begin{array}{ccc}
+
+1 & 0 & -1\\
+2 & 4 & -3\\
+3 & 0 & 2
+\end{array} \right].$$
+%p167
+
+
+\textbf{\emph{Theorem 6.12}} Let $L:V\rightarrow W$ be a linear transformation with matrix $A$. Let $S$ and $S^\prime$ be ordered bases for $V$ and $T$ and $T^\prime$ be ordered bases for $W$. Let $P$ and $Q$ be the transition matrices from $S$ to $S^\prime$ and $T$ and $T^\prime$, respectively. Then $Q^{-1}AP$ is the representation of $L$ with respect to $S^\prime$ and $T^\prime$. 
+\medskip
+
+\textbf{\emph{Definition}} Matrix $B$ is similar to $A$ if  $B = P^{-1}AP$. 
+
+
+HW9.) Let $L:\mathbb{R}^3 \rightarrow \mathbb{R}^2$ be the linear transformation with matrix $$A = \left[ \begin{array}{ccc}
+
+2 & -1 & 3\\
+3 & 1 & 0
+\end{array} \right]$$ with respect to $S = \{(1,0,-1), (0,2,0), (1,2,3) \}$ and $T=\{(1,-1), (2,0)\}$. 
+
+Find the representation of $L$ with respect to the natural bases for $\mathbb{R}^3$ and $\mathbb{R}^2$. 
+
+
+h.) Let $\mathbf{\lambda}$ be the eigenvalues of $A$. Find the eigenvalues of $A^n$ and $(A+cI)$. Recall $Ax = \lambda x$ for any eigenvalue $\lambda$ and an associated eigenvector $x$. 
+
+
+
+
+
+
+
+
+
+
+\end{document}

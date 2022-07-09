@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+%\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\textbf{Midterm I Solution Sketches for Pages 2-4}\footnote{I just made these to help me grade. I made some arithmetic errors somewhere, and I can't remember if I fixed them or not. :) :(}
+\end{center}
+
+1. We are given $$A=\left[\begin{array}{cc}
+1 & 2\\
+-1 & 4\\
+3 & 1
+\end{array}\right], B=\left[\begin{array}{cc}
+1 & 3\\
+-1 & -1\\
+-5 & 4
+\end{array}\right], \text{ and } C=\left[\begin{array}{cc}
+1 & 2\\
+4 & -8\\
+\end{array}\right].$$
+
+
+
+a.) $$2A-B=\left[\begin{array}{cc}
+2-1 & 4-3\\
+-2+1 & 8+1\\
+6+5 & 2-4
+\end{array}\right].$$
+
+
+b.) $$C^{-1}=\frac{1}{-8-8}\left[\begin{array}{cc}
+-8 & 2\\
+-4 & 1\\
+\end{array}\right].$$
+
+
+
+c.) $AC$ will have dimension $3\times 2$, 
+$$AC=\left[\begin{array}{cc}
+1+8 & 2-16\\
+-1+16 & -2-32\\
+3+4 & 6 -8 
+\end{array}\right]=\left[\begin{array}{cc}
+9 & -14\\
+15 & -34\\
+7 & -2
+\end{array}\right].$$
+
+
+\bigskip
+2. 
+
+a.) det($D$) = -1(-5-0)+1(-1-0) = 5-1=4
+
+
+b.) $$\text{rref}(D)=\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right].$$
+
+c.) The above shows this matrix is nonsingular. Therefore, only the trivial solution exists. That is, the solution set is $\{\mathbf{0}\}$. (Corollary 3.1 in the textbook)
+
+
+d.) $$A^Tx =\left[\begin{array}{ccc}
+1 & -1 & 3\\
+2 & 4 & 1
+\end{array}\right] \left(\begin{array}{c}
+x_1\\
+x_2\\
+x_3
+\end{array}\right) = \mathbf{0}$$
+
+We know that $x$ must have dimension $3\times 1$ to be a vector and give a valid multiplication. 
+
+This give two equations with three unknowns;
+
+$$x_1 -x_2 +x_3=0,$$
+$$2x_1+4x_2+x_3=0.$$
+
+The solution set is $\{x\in\mathbb{R}^3 \mid x_2=\frac{-5}{13}x_1 \text{ and }x_3=\frac{-6}{13}x_1\}.$
+
+\bigskip
+
+
+3. 
+
+a.) $Ax=0$ blah blah
+
+b.) A square matrix is singular if the determinant is zero. For these matrices, no inverse exists, so that if $S$ is singular, then there does not exist a matrix $S^{-1}$ such that $SS^{-1}=I$. For example, $$S=\left[\begin{array}{c}
+0 
+\end{array}\right].$$
+
+c.) Two matrices are row equivalent if one is the product of a sequence of elementary row operations and the other. 
+
+Elementary row operations are row swaps, addition of rows, and scaling of a row by a constant. 
+
+$[1]$ and $[2]$ are row equivalent. But perhaps you would like a less trivial example: 
+
+
+$$A=\left[\begin{array}{cc}
+1 & 0\\
+0 & 1\\
+\end{array}\right], B=\hat{E}A=\left[\begin{array}{cc}
+1 & 1\\
+1 & 0\\
+\end{array}\right].$$
+
+$B$ is obtained from $A$ by adding row 1 to row 2 and swapping the resulting row 2 with row 1. You might also note that $D$ and $I$ from the previous question are row equivalent, as $I$=rref($D$). 
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+\textbf{Not Quiz 12}
+
+Quiz before I made it a little easier.) Let $\langle \cdot, \cdot \rangle$ be an inner product. Is the following function a linear transformation? $L:\mathcal{V}\rightarrow \mathbb{R}$, 
+
+$$L_y(x) = \langle x, y\rangle .$$
+
+a.) Is $L(x,y) = \sqrt{xy}$ a linear transformation?
+
+b.) Is $H(x,y) = \langle x, y \rangle $ a linear transformation?
+
+c.) Is $T(x,y,z) = 91$ a linear transformation? 
+
+d.) Let $L:P_2\rightarrow P_1$ be the linear transformation defined by $$L(at^2 + bt + c) = (a+b)t + (b-c).$$ Find a basis for ker and range $L$. 
+
+e.) \emph{HW25 from 6.3} Let $L:\mathbb{R}^4 \rightarrow \mathbb{R}^6$ be a linear transformation. If dim ker $L=2$, find dim range $L$? If dim range $L=3$, what is dim ker $L$?
+
+
+f.) Let $T(x,y,z) = (x+y, y+z)$. Calculate the matrix of $T$ relative to the standard bases of $\mathbb{R}^3$ and $\mathbb{R}^2$. Then, relative to the bases $\{(1,0,0), (0,0,1), (1,-1,1)\}$ and $\{(1,0), (0,1)\}$. 
+%p163 in smith
+
+g.) Find the value of $T(1,1,-1)$ for the linear transformation $T: \mathbb{R}^3$ whose matrix relative to the standard basis and $\{1, x, x^2\}$ is 
+
+$$\left[ \begin{array}{ccc}
+
+1 & 0 & -1\\
+2 & 4 & -3\\
+3 & 0 & 2
+\end{array} \right].$$
+%p167
+
+
+\textbf{\emph{Theorem 6.12}} Let $L:V\rightarrow W$ be a linear transformation with matrix $A$. Let $S$ and $S^\prime$ be ordered bases for $V$ and $T$ and $T^\prime$ be ordered bases for $W$. Let $P$ and $Q$ be the transition matrices from $S$ to $S^\prime$ and $T$ and $T^\prime$, respectively. Then $Q^{-1}AP$ is the representation of $L$ with respect to $S^\prime$ and $T^\prime$. 
+\medskip
+
+\textbf{\emph{Definition}} Matrix $B$ is similar to $A$ if  $B = P^{-1}AP$. 
+
+
+HW9.) Let $L:\mathbb{R}^3 \rightarrow \mathbb{R}^2$ be the linear transformation with matrix $$A = \left[ \begin{array}{ccc}
+
+2 & -1 & 3\\
+3 & 1 & 0
+\end{array} \right]$$ with respect to $S = \{(1,0,-1), (0,2,0), (1,2,3) \}$ and $T=\{(1,-1), (2,0)\}$. 
+
+Find the representation of $L$ with respect to the natural bases for $\mathbb{R}^3$ and $\mathbb{R}^2$. 
+
+
+h.) Let $\mathbf{\lambda}$ be the eigenvalues of $A$. Find the eigenvalues of $A^n$ and $(A+cI)$. Recall $Ax = \lambda x$ for any eigenvalue $\lambda$ and an associated eigenvector $x$. 
+
+
+
+
+\pagebreak
+
+\textbf{Not Quiz 12---Solution Sketches}
+
+
+Quiz before I made it a little easier.) Just, like the quiz, this will be a linear transformation. Note $y$ is a parameter and not an input in the function. 
+
+a.) This is not linear. Though it is true that $\alpha L(x,y)=L(\alpha x, \alpha y)$, the function fails additivity. Note $L(0,1)=L(1,0)=0$. But $L(1,1)=1$. Additivity would require $L(0,1)+L(1,0)=L(1,1)$.
+
+b.) This is not linear. Observe $H(\alpha x, \alpha y) = \alpha^2 H(x,y)$. Additivity would also fail. 
+
+c.) This is not linear, failing both the scalar thing (technical name is something like homogeneous of degree 1) and additivity. $T(x,y,z)+T(a,b,c)=91+91 \neq T(x+a, y+b, z+c) = 91.$
+
+%book 6.2 num 8
+d.) Kernel:
+
+We must have $a+b=0$ and $b-c=0$, or $a=-b$ and $b=c$. 
+
+Thus, one vector/polynomial kernel is $-x^2 +x +1$. We claim this is a basis.
+
+The range will be all polynomials in $P_1$. Note, we can achieve any polnyomial $\beta_1x + \beta_2$ by letting $a=\beta_1$ and $c=\beta_2$. So, our basis may include $x$ and $1$. 
+
+
+Note that dim$ker$ + dim$range$ = dim$P_2$, and this holds given the bases selected above. 
+
+e.) dim range $L$ is 2 and dim ker $L$ 1. 
+
+f.) 
+\begin{align*}
+T(1,0,0) & = (1,0)\\
+T(0,1,0) & = (1,1)\\
+T(0,0,1) & = (0,1)
+\end{align*}
+
+so $A$ binds these as columns as a matrix, $$A = \left[ \begin{array}{ccc}
+
+1 & 1 & 0\\
+0 & 1 & 1
+\end{array} \right].$$
+
+Then, using the other bases, $T(1,-1,1) = (0,0)$. 
+
+$$B = \left[ \begin{array}{ccc}
+
+1 & 0 & 0\\
+0 & 1 & 0
+\end{array} \right].$$
+
+g.) 
+\begin{align*}
+T(1,1,-1) &= T(e_1 + e_2 - e_3)\\
+& = T(e_1)+ T(e_2)-T(e_3)\\
+& = (1+2x+3x^2)+(4x)-(-1-3x+2x^2)
+& = 1 + 1 + 2x + 4x + 3x + 3x^2 -2x^2\\
+& = 2+9x +x^2.
+\end{align*}
+
+h.) If $Ax = \lambda x$. Then $A^n x = A^{n-1}\lambda x = \lambda A^{n-1}x=\lambda ^n x.$
+
+The above is probably hazy. Try with $n=2$, see what the above line implies. Then, successive application of that trick should get you the result. 
+
+If $Ax = \lambda x$ then $(A+cI)x = (\lambda + c)x$. So, the eigenvalues are shifted up by $c$ .
+
+
+
+
+
+
+\end{document}

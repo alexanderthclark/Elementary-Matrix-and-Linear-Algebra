@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 10}
+
+
+1.) Is the following operation an inner product? Why or why not?
+
+$$\langle x , y\rangle  = \begin{cases}
+0 \; & \text{ if }x\neq y\\
+91 \; & \text{ if }x=y.
+\end{cases}$$
+
+
+2.) Use an inner product to find the angle between vectors $(-4,0)$ and $(2,0)$. (You can figure this out in a graph, but show the steps using an inner product.)
+
+\pagebreak
+
+\textbf{Not Quiz 10}
+
+A set of vectors is said to be an \textbf{orthogonal set of vectors} if does not contain the zero vector and for any two distinct vectors $a$ and $b$, $\langle a , b \rangle=0$. An orthogonal set is said to be \textbf{orthonormal} if in addition $\Vert a \Vert =1$ for every vector in $a$ in the set. 
+
+\smallskip
+
+\textbf{Linear combinations of orthogonal vectors:} Suppose that $\{a_1, a_2, \dots, a_3\}$ is an orthogonal set of nonzero vectors in the inner product space $\mathcal{V}$. If $u$ is a linear combination of $a_1, \dots, a_n$, then 
+
+$$u = \frac{\langle u, a_1 \rangle}{\langle a_1, a_1 \rangle} a_1 + \dots + \frac{\langle u, a_n \rangle}{\langle a_n, a_n \rangle} a_n.$$
+
+\medskip{}
+
+\textbf{Gram-Schmidt Process:} Given a basis $\{b_1, \dots, b_n\}$ for an inner product space $\mathcal{W}$, we can find a orthonormal basis $\{\bar{a}_1, \dots, \bar{a}_n\}$ using the following process.
+
+
+Define $a_1, \dots, a_n$:
+
+\begin{align*}
+a_1 &=  b_1 \\
+a_2 &=  b_2 - \frac{\langle b_2, a_1 \rangle}{\langle a_1, a_1 \rangle} a_1\\
+\vdots & \\
+a_n &= b_n - \frac{\langle b_n, a_{n-1} \rangle}{\langle a_{n-1}, a_{n-1} \rangle} a_{n-1} - \cdots - \frac{\langle b_n, a_1 \rangle}{\langle a_1, a_1 \rangle} a_1.
+\end{align*}
+
+This will be an orthogonal basis. We normalize the vectors by setting $\bar{a}_i= \frac{1}{\Vert a_i \Vert} a_i$ to create the orthonormal basis $\{\bar{a}_1, \dots, \bar{a}_n\}$.
+%\medskip{}
+%\textbf{Interpretation of the above:} Note that by rearranging each equation, we see that we are writing $b_i$ as a linear combination of $a_1, \dots, a_i$.
+
+\emph{Tentative advice:} Focus on understanding GS in two dimensions. Then, look at the multidimensional process as working iteratively by each 2-D subspace. That is we might find $a_3$ by combining orthonormalizations of $b_3$ and $a_1$, then $b_3$ and $a_2$. 
+
+
+
+a.) Is the set of vectors $\{(1,0), (0,1),(1,1)\}$ orthogonal? Hint: you can answer this by counting and citing previous results. 
+
+
+
+
+b.) Is this an inner product? $\langle x, y\rangle = \Vert x \Vert \Vert y \Vert?$
+
+c.) Use Gram-Schmidt to find an orthonormal basis for $P_2$. Hint: start with the basis $\{1,x,x^2\}$. Use $\langle f,g\rangle = \int_{[-1,1]}fg dx$.
+
+d.) Write the vector $a=(1,-1,1)$ as a linear combination of the vectors $v_1 = (1,1,1), v_2=(0,1,-1), v_3=(-2,1,1)$.
+
+e.) Orthonormalize the basis $\{(1,2),(3,4)\}$.
+
+
+\pagebreak
+\textbf{Not Quiz 10 Solutions}
+
+a.) This is not a set of linearly independent vectors, because we cannot have three vectors in $\mathbb{R}^2$ be linearly independent (at most two such vectors can be). Because we know a set of orthogonal vectors is linearly independent, these cannot be orthogonal. 
+
+
+b.) This is not an inner product because it fails the property $\langle x+a, y\rangle = \langle x,y\rangle + \langle a, y\rangle$. Consider $x,y,a\in \mathbb{R}^1$. Let $x=y=1$ and $a=-1$. Then $\langle x+a,y\rangle = \langle 0, 1\rangle = 0$. However  $\langle x,y\rangle + \langle a, y\rangle = 1 + 1=2$, meaning this cannot be an inner product because it fails to satisfy the stated property. 
+
+
+c.) We use $\langle f,g\rangle = \int_{[-1,1]}fg dx$.
+
+\begin{align*}
+a_1 &= 1 \\
+a_2 &= x - \frac{\langle x,1\rangle}{\langle 1, 1\rangle}1\\
+a_3 & = x^2 - \frac{\langle x^2,1\rangle}{\langle 1, 1\rangle}1 - \frac{\langle x^2,a_2\rangle}{\langle a_2, a_2\rangle}a_2
+\end{align*}
+
+We can calculate 
+
+\begin{align*}
+\langle x,1\rangle &= \int_{-1}^1 xdx = 0\\
+\langle 1,1\rangle &= \int_{-1}^1 1dx = 2
+\end{align*}
+
+So that $a_2=x$. We proceed to find $a_3$.
+
+\begin{align*}
+\langle x^2,1\rangle &=\int_{-1}^1 x^2dx = \frac{2}{3}\\
+\langle x^2,a_2\rangle &=\int_{-1}^1 x^3dx = 0\\
+\langle a_2,a_2\rangle &=\int_{-1}^1 x^2dx = \frac{2}{3}
+\end{align*}
+
+Thus $a_1 = 1, a_2 =x$, and $a_3=x^2 - \frac{\frac{2}{3}}{2}a_1-0a_2 = x^2 - \frac{1}{3}$.
+
+
+d.) $v_1, v_2,v_3$ are orthogonal. therefore we must have 
+
+$a = \frac{\langle a,v_1\rangle}{\langle v_1,v_1\rangle}v_1+\frac{\langle a,v_2\rangle}{\langle v_2,v_2\rangle}v_2 + \frac{\langle a,v_3\rangle}{\langle v_3,v_3\rangle}v_3$. 
+
+Computation gives $a = \frac{1}{3}v_1 -1v_2 -\frac{1}{3}v_3.$
+
+e.) We use the standard inner product. Row vectors are used in place of the usual column vectors because they are easier to type. Please don't be mad.
+\begin{align*}
+a_1 &= (1,2) \\
+a_2 &= (3,4) - \frac{\langle (3,4),(1,2)\rangle}{\langle (1,2), (1,2)\rangle}(1,2)
+\end{align*}
+
+We reduce the last line,
+
+$$a_2 = (3,4) - \frac{11}{5}(1,2) = (4/5, -2/5)$$. 
+
+We can verify these are orthogonal $(1,2)\cdot (4/5,-2/5) = 4/5-4/5=0$. 
+
+Now let's normalize to vectors $\frac{1}{\sqrt{5}}(1,2)$ and $\frac{1}{\sqrt{\frac{4}{5}}}(4/5,-2/5)$.
+
+\end{document}

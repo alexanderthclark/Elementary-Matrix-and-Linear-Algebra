@@ -1,0 +1,246 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 11}
+
+
+1.) Consider $\mathbb{R}^2$ with the standard inner product. Let $v= \left( \begin{array}{c}
+
+-1\\
+0
+\end{array} \right)$. Find the orthogonal complement of $\text{span}\left( \{v\} \right)$. Use the standard inner product.
+\smallskip
+
+
+2.) Let $S=\{t+3, t^2\}$ be a basis for the subspace $W$ of the space $P_2$. Find an orthonormal basis for $W$. Use inner product $\langle f, g\rangle = \int_{-1}^1 f(t)g(t) dt$. You don't have to reduce fractions. 
+%Compute all integrals \emph{except} for at the normalization stage----simply show what integral should be computed.
+
+
+\pagebreak
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 11}
+
+
+1.) Consider $\mathbb{R}^2$ with the standard inner product. Let $v= \left( \begin{array}{c}
+
+-1\\
+0
+\end{array} \right)$. Find the orthogonal complement of $\text{span}\left( \{v\} \right)$. Use the standard inner product.
+\smallskip
+
+
+2.) Let $S=\{\frac{1}{2}, t-1\}$ be a basis for the subspace $W$ of the space $P_2$. Find an orthonormal basis for $W$. Use inner product $\langle f, g\rangle = \int_{-1}^1 f(t)g(t) dt$.
+
+
+\pagebreak
+
+GS Process
+
+$v_1 = t+3$
+
+$v_2 = t^2 - \frac{\langle t^2, t+3 \rangle }{\langle t+3, t+3 \rangle} (t+3)$
+
+
+$v_2 = t^2 - \frac{2}{56/3}(t+3)$
+
+
+\pagebreak
+\textbf{It doesn't matter if you normalize as you go or all at the end when using Gram-Schmidt.}
+
+
+You might proceed one of two ways. You might normalize as you go or all at the end. These are equivalent. Consider the following illustration. 
+
+
+Suppose we have two vectors in a basis $\{a_1, a_2\}$ and we want to convert it into an orthonormal basis $\{v_1, v_2\}$.
+
+Option 1: First we create an orthogonal basis $\{u_1, u_2\}$. 
+
+\begin{align*}
+u_1 &= a_1\\
+u_2 &= a_2 - \frac{\langle u_1, a_2\rangle}{\langle u_1, u_1\rangle} u_1
+\end{align*}
+
+Then let $v_i = \frac{u_i}{\Vert u_i \Vert}$.
+
+Option 2: Normalizing as you go. 
+
+\begin{align*}
+v_1 &= \frac{a_1}{\Vert a_1 \Vert}\\
+u_2 &= a_2 - \langle v_1, a_2\rangle v_1\\
+v_2 &= \frac{u_2}{\Vert u_2\Vert}
+\end{align*}
+
+Now, I want to show you that $a_2 - \langle v_1, a_2\rangle v_1 = a_2 - \frac{\langle u_1, a_2\rangle}{\langle u_1, u_1\rangle} u_1$, meaning that it doesn't matter if you normalize the vector $i-1$ before calculating vector $i$ or not.
+
+Observe $v_1 = \frac{u_1}{\Vert u_1\Vert}$.
+
+So, $$a_2 - \langle v_1, a_2\rangle v_1 = a_2 - \langle \frac{u_1}{\Vert u_1\Vert}, a_2\rangle \frac{u_1}{\Vert u_1\Vert}. $$
+
+Now we can pull the scalar out of the inner product, 
+
+$$ = a_2 - \frac{1}{\Vert u_1\Vert}\langle u_2, a_2\rangle \frac{u_1}{\Vert u_1\Vert} = a_2 - \frac{1}{\Vert u_1\Vert^2}\langle u_2, a_2\rangle u_1,$$
+
+or
+
+$$ = a_2 - \frac{\langle u_1, a_2\rangle}{\langle u_1, u_1\rangle} u_1,$$
+
+which is what we had for the normalize-just-at-the-end approach.
+
+\pagebreak
+
+\textbf{Not Quiz 11}
+
+\bigskip{}
+
+\textbf{Projections:} Let $\{v_1, ... v_n\}$ be an orthonormal basis for $W$. Then, the projection of a vector $u$ onto $W$ is
+
+$$\text{proj}_W u = \sum_{i=1}^n \langle u,v_i\rangle v_i.$$
+
+
+\textbf{Orthogonal Complement:} Let $\mathcal{V}$ be an inner product space and $\mathcal{S}$ is a subset of $\mathcal{V}$. The orthogonal complement of $\mathcal{S}$ is defined by $$\mathcal{S}^\perp = \left\{a\in\mathcal{V}\mid \langle a,b\rangle = 0, \text{ for all }b\in\mathcal{S}\right\}.$$
+
+P.S. Every vector $v\in\mathcal{V}$ can be written as $v=s+s^\star$ where $s\in\mathcal{S}$ and $s^\star\in \mathcal{S}^\perp$. 
+
+\textbf{Linearity:}
+
+A linear transformation $T:\mathcal{V}\rightarrow \mathcal{W}$ satisfies 
+
+\begin{enumerate}
+\item $T(x+y)=T(x)+T(y)$, for all $x,y\in \mathcal{V}$
+\item $T(\alpha x) = \alpha T(x)$ for all $\alpha \in \mathbb{R}$ and $x\in \mathcal{V}$. 
+\end{enumerate}
+
+The \textbf{standard matrix representing a linear transformation $L:\mathbb{R}^n\rightarrow\mathbb{R}^m$}, given the natural basis $\{e_1, \dots, e_n\}$ for $\mathbb{R}^n$ is $A$ where the $j^\text{th}$ column is $L(e_j)$. 
+
+
+
+\medskip
+
+
+
+a.) Can the orthogonal complement of a plane (two-dimensional subspace) in $\mathbb{R}^3$ be another plane? 
+
+b.) Find the orthogonal complements of the subspaces 
+
+$$\mathcal{W} = \left\{ \mathbf{x}\in\mathbb{R}^3 \mid x_1 + 2x_2 + 3x_3 = 0 \right\}$$
+
+$$\mathcal{S} = \left\{ \mathbf{x}\in\mathbb{R}^3 \mid x_1+x_2+x_3=0 \text{ and }x-y+z=0 \right\}$$
+
+c.) Find a basis for the orthogonal complement of the subspace 
+$$\mathcal{W} = \left\{ \mathbf{x}\in\mathbb{R}^3 \mid \alpha x_1 + \beta x_2 + \gamma x_3 = 0 \right\}$$
+
+d.) What is the orthogonal complement of $\mathbf{0}\in\mathbb{R}^n$?
+
+
+e.) Show $\text{proj}_W( \text{proj}_W u ) = \text{proj}_W u$.
+
+f.) Show $R(x,y)=(x\cos \theta - y \sin\theta, x\sin \theta + y \cos \theta)$ is a linear transformation. 
+
+
+HW11.) Find the standard matrix representing each given linear transformation. 
+
+\begin{enumerate}
+\item[i.] $L(\left[ \begin{array}{c}
+u_1\\
+u_2
+\end{array} \right] ) = \left[ \begin{array}{c}
+u_2\\
+u_1
+\end{array} \right]$
+
+\item[ii.] $L(\left[ \begin{array}{c}
+u_1\\
+u_2
+\end{array} \right] ) = \left[ \begin{array}{c}
+u_1 - 3u_2\\
+2u_1 - u_2\\
+2u_2
+\end{array} \right]$
+
+\item[iii.] $L(\left[ \begin{array}{c}
+u_1\\
+u_2\\
+u_3
+\end{array} \right] ) = \left[ \begin{array}{c}
+u_1 + 4u_2\\
+-u_3\\
+u_2+u_3
+\end{array} \right]$
+
+\end{enumerate}
+
+
+
+HW15.) Let $L: P_2 \rightarrow P_3$ be a linear transformation for which we knot that $L(1)=1, L(t)=t^2$, and $L(t^2) = t^3+t$. Find $L(2t^2 - 5t +3)$ and $L(at^2+bt+c)$. 
+
+\pagebreak
+
+\textbf{Not Quiz 11 Solutions}
+
+a.) No, two planes would intersect at infinitely many points. But $W\cap W^\perp = \{0\}$.
+
+b.) $\mathcal{W}^\perp$ will be a line because $\mathcal{W}$ is a plane. Let $\{(a,b,c)\}$ be a basis for $\mathcal{W}^\perp$ and $(x,y,z)\in\mathcal{W}$. 
+
+By properties of the orthogonal complement,
+$$\langle (a,b,c),(x,y,z)\rangle = ax + by + cz=0.$$
+
+For $(x,y,z)\in\mathcal{W}$, $ax+by+cz=0$ when $a=1=,b=2,c=3$. therefore, $(1,2,3)\in\mathcal{W}^\perp$. Because $\mathcal{W}^\perp$ is 1 dimensional, the orthogonal complement is the span of $(1,2,3)$. 
+
+Now, we find $\mathcal{S}^\perp$. As the intersection of two planes, $\mathcal{S}$ is a line. Its orthogonal complement will therefore be a line. A basis for $\mathcal{S}$ is $\{ (1,0,-1) \}$, since it lies on both planes defining $\mathcal{S}$. 
+
+The orthogonal complement must therefore be the plane containing points $x$ such that $(1,0,-1)\cdot x = 0$. That means 
+
+$$\mathcal{S}^\perp  = \{x\in \mathbb{R}^3 \mid x_1-x_3=0\}.$$
+
+c.) See the first part of $b$. The basis is a set consisting of $(\alpha, \beta, \gamma)$. 
+
+d.) The orthogonal complement is $\mathbb{R}^n$. Because the original space is 0-dimensional, the complement must be $n$ dimensional. Further, we might realize that any vector $x\in\mathbb{R}^n$ must be represented as $x= 0+x^\star$, where $x^\star\in\{0\}^\perp$. We find $x = x^\star$, and because $x$ is arbitrary, this means that $\{0\}^\perp = \mathbb{R}^n$. 
+
+e.) This is going to be annoying. Let an orthonormal basis for $W$ be $\{w_1, \dots, w_n\}$. 
+
+
+$$\text{proj}_W u = \sum_{i=1}^n \langle w_i, u\rangle w_i.$$
+
+So, $$\text{proj}_W (\text{proj}_W u) = \sum_{i=1}^n \langle w_i, \text{proj}_W u\rangle w_i.$$
+
+$$ = \sum_{i=1}^n \langle w_i, \sum_{i=1}^n \langle w_i, u\rangle w_i\rangle w_i.$$
+
+$$ = \sum_{i=1}^n \langle w_i, \langle w_1, u\rangle w_1 +\dots + \langle w_n, u \rangle w_n \rangle w_i.$$
+
+
+$$ = \sum_{i=1}^n\langle w_1, u\rangle \langle w_i,  w_1\rangle w_i  + \dots + \langle w_n, u \rangle \langle w_i,  w_n \rangle w_i.$$
+
+
+Using orthogonality, terms $\langle w_i, w_j\rangle =0$ for $i\neq j$. Normality means the inner product is $1$ if $i=j$.
+
+$$ = \langle w_1, u\rangle \langle w_1,  w_1\rangle w_1 + \dots + \langle w_n, u \rangle \langle w_n,  w_n \rangle w_n.$$
+
+$$ = \langle w_1, u\rangle w_1 + \dots + \langle w_n, u \rangle w_n.$$
+
+$$ = \sum_{i=1}^n \langle w_i, u\rangle w_i.$$
+
+f.) Verify $R(x+a,y+b)= R(x,y)+R(a,b)$ and $R(\alpha x, \alpha y) = \alpha R(x,y)$. 
+
+
+
+
+
+
+
+
+
+
+\end{document}

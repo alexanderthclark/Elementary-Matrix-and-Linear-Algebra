@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip}
+\usepackage[utf8]{inputenc}
+%\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 1}
+
+
+1.) $G=\left[\begin{array}{cccc}
+0 & 1 & 1 & 0\\
+1 & 0 & 0 & 1\\
+1 & 0 & 0 & 1\\
+0 & 1 & 1 & 0
+\end{array}\right]$. 
+
+2.) Write the following system of equations in the form $Ax = b$
+
+$$10x_1+9x_2+x_3-9=0$$
+$$9x_2+x_3+1=0$$
+$$10x_1 - x_3=8$$
+
+
+\pagebreak
+Math 340 9/14
+
+i.) Consider $A=\left[\begin{array}{cccccccc}
+1 & 1 & 1 & 0 & 0 & 1 & 1 & 0\\
+1 & 0 & 0 & 1& 0 & 1 & 1 & 0\\
+1 & 8 & 0 & 1 & 777 & 1 & 1 & 0\\
+1 & 0 & 0 & 9 & 0 & 1 & 1 & 0\\
+1 & 5 & 0 & 1 & 0 & 1 & 1 & 0\\
+1 & 0 & 0 & 1 & 0 & 27 & 1 & 0\\
+1 & 0 & 44 & 1 & 0 & 1 & 3 & 0\\
+0 & 1 & 1 & 0 &0 & 1 & 1 & 0
+\end{array}\right]$.
+
+Let B = 2A and $C=AB$ and $D=C^T$.
+
+Find $d_{81}$.
+
+
+\bigskip
+
+ii.) $A=\left[\begin{array}{cc}
+0 & 1 \\
+0 & 1
+\end{array}\right]$
+
+and $B=\left[\begin{array}{cc}
+0 & 1 \\
+0 & 0
+\end{array}\right]$
+
+Find $AB$. Find $C=BA$. Find $C^2$.
+
+
+iii.) Suppose $AB=0$ and $C=BA$. What can you say about $C^2$? Support your claim. 
+
+
+
+iv.) The following is an example of a \emph{shift matrix}, 
+$$S = \left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{array}\right].$$
+
+Why is it called that? Try computing $SA$ and $AS$ for
+
+$$A = \left[\begin{array}{ccc}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{array}\right].$$
+
+Try also $$B = \left[\begin{array}{ccc}
+r & s \\
+t & u  \\
+v & w 
+\end{array}\right].$$
+
+\pagebreak
+
+Math 340 9/14 Solutions
+
+i.) $d_{81}=0$. That is, entry $(8,1)$ of $D$ is zero.
+
+We know that matrix $D$ is the transposition of matrix $C$.
+
+Therefore, we are trying to compute $c_{18}=d_{81}$. 
+
+We are given $C=AB=A2A=2A^2$. 
+
+Therefore, $c_{18}=2a^2_{18}$. 
+
+Recall the entry $(i,j)$ from a matrix that is the product of two matrices will be equal to the $i^{\text{th}}$ \emph{row} of the first matrix dot producted with the $j^{\text{th}}$ \emph{column} of the second matrix. So, we take the first row of $A$ and dot that with the last column. Note the last column is all zeros. Therefore the dot product will be zero, and $a^2_{18}=0$.
+
+Now, $d_{81}=c_{18}=2a^2_{18}=2\times 0 =0$.
+
+
+\bigskip
+
+ii.) $C^2$ is a $2\times2$ matrix of all zeros. 
+
+\bigskip
+
+iii.) This is an exercise in squaring matrices and using associativity of matrix multiplication. 
+
+
+We are given $C=BA$ and asked to compute $C^2$. 
+
+$C^2=BABA$, \emph{note that} $C^2\neq B^2A^2$.
+
+Using associativity, $C^2 = B(AB)A = B0A=0$. 
+
+iv.) 
+
+$$SA= \left[\begin{array}{ccc}
+d & e & f\\
+g & h & i\\
+0 & 0 & 0 \\
+\end{array}\right]$$
+
+$$AS= \left[\begin{array}{ccc}
+0& a & b \\
+0& d & e \\
+0& g & h 
+\end{array}\right]$$
+
+$$SB =\left[\begin{array}{ccc}
+t & u\\
+v & w \\
+0 & 0
+\end{array}\right]$$
+
+Please note $BS$ is not computable. $B$ is of dimension $3\times 2$ and $S$ is of dimension $3\times 3$. The first matrix in a product must have the same number of columns and the second matrix has rows. This ensures that the dot products featured in matrix multiplication will be defined. 
+
+
+\end{document}

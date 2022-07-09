@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 7}
+
+1.) What is the span of $\{1-x, 1+x\}$ in the set of polynomials of degree $n$?
+
+2.) Is the following set of vectors linearly independent? Show why or why not.
+
+$$\left\{ \left(\begin{array}{c}
+91\\
+0\\
+0 \end{array}\right), \left(\begin{array}{c}
+91\\
+10\\
+73 \end{array}\right)\right\}$$
+
+
+
+\pagebreak
+
+\textbf{Not Quiz 7}
+
+
+A \emph{basis} $\beta$ for a set $V$ has properties
+
+\begin{enumerate}
+\item span($\beta$)=$V$
+\item $\beta$ is linearly independent.
+\end{enumerate}
+
+a.) Can a collection of $n+1$ vectors be a basis for $\mathbb{R}^n$?
+
+\bigskip{}
+b.) Show a set of vectors containing $\mathbf{0}$ is linearly dependent.
+
+\bigskip{}
+
+c.) Show any subspace is a linearly dependent set of vectors.
+
+
+\bigskip{}
+
+d.) Show $E=\{(1,0,0), (0,1,0), (0,0,1), (1,1,1)\}$ is linearly dependent, but that any set of three of these vectors is linearly independent.
+
+\bigskip{}
+
+e.) (Proofy) Show if $\beta$ contains $n$ linearly independent vectors, then it must be a basis for $\mathbb{R}^n$.
+
+\bigskip{}
+
+f.) Find a basis for the subspace $\mathcal{U}=\{(x,y,z)\in \mathbb{R}^3 \mid x-z=0\}.$
+
+\bigskip{}
+HW28.) Find a basis for $\mathbb{R}^3$ that includes
+
+i.) $\left(\begin{array}{c}
+1\\
+0\\
+2 \end{array}\right)$
+
+ii.) $\left(\begin{array}{c}
+1\\
+0\\
+2 \end{array}\right)$ and $\left(\begin{array}{c}
+0\\
+1\\
+3 \end{array}\right)$
+
+
+
+
+\pagebreak
+
+\textbf{Not Quiz 7 Solutions}
+
+\it Preamble: Questions a.) and e.) are difficult to show formally, and I didn't quite forecast this appropriately as I constructed the handout. So, let's not worry about proving these things. Accordingly, I have not typed up full proofs. I put them on the handout because I think they are important and helpful properties to have a feel for. You should spend some time convincing yourself that the answer to a.) is no and that the statement in e.) is true. 
+\rm
+
+
+a.) No. They would not be linearly independent.\footnote{Proving linear dependence takes a little work. I used induction.}
+
+
+b.) To prove linear dependence of vectors $u_1, \dots, u_n$, you need only show that there is a nontrivial solution to $\sum_{i=1}^n a_i u_i =0$. Let $u_1=\mathbf{0}$, $a_1=91$, and $a_i=0$ for all $i>1$. That's a nontrivial solution, so the set of vectors is linearly dependent. 
+
+
+c.) A subspace will contain a zero element $\mathbf{0}$. By part b.), it will be linearly dependent. 
+
+d.) Observe we can subtract $(1,1,1)$ from the sum of the standard basis vectors to obtain $\mathbf{0}$. Therefore, the entire set is linearly dependent. 
+
+There are four combinations to consider. Each will produce a nonsingular matrix. For those combinations including $(1,1,1)$, elementary row operations will eventually allow you to create an identity matrix. For those combinations not including $(1,1,1)$, the identity matrix is immediately formed by properly ordering the vectors. If the associated matrix is nonsingular, the vectors are linearly independent.
+
+
+e.) See Theorem 4.12 for the whole proof. Just have some idea that $n$ vectors can span an $n$-dimensional space.
+
+
+f.) The condition for a vector belonging to the set $x=z$. So, we must construct one vector that features $x=z$ with $z$ and $x$ nonzero. Let's choose $(1,0,1)$. There are no restrictions on $y$, so a vector like $(0,1,0)$, when scaled and added to $(1,0,1)$, let's us achieve any $y$ value we'd like. 
+
+Together, this forms a basis $\{(1,0,1), (0,1,0)\}$, though many more exist.
+
+
+
+
+\end{document}
+
+
+have a upper tri submatrix for cofactor ease
+Find det of .5*swap*

@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,parskip,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{rotating}
+\pagenumbering{gobble}
+\begin{document}
+
+Name:\\
+\medskip
+Section (time):
+
+\subsection*{Math 340 Quiz 8}
+
+1.) What is the null space of the matrix below?
+
+$$ A= \left[ \begin{array}{cc}
+2 & 0\\
+4 & 2
+\end{array}\right]$$
+
+\bigskip
+
+
+2.) What is the dimension of the space spanned by vectors $ \left(\begin{array}{c}
+1\\
+0 \\
+0 \\
+0 \end{array}\right), \left(\begin{array}{c}
+7 \\
+0 \\
+0 \\
+0 \end{array}\right), \left(\begin{array}{c}
+0 \\
+0 \\
+0 \\
+0 \end{array}\right)$?
+
+\pagebreak
+
+\textbf{Not Quiz 8}
+
+
+a.) Find a basis for $P_3$ other than $\{1, x, x^2, x^3\}.$
+
+
+b.) Are the vectors $(1,1,-2)$ and $(0,3,-3)$ a basis for the subspace $$\mathcal{V}=\{(x,y,z)\in\mathbb{R}^3 \mid x+y+z=0\}?$$
+
+
+c.) For what values of $r$ are the vectors $(r,1,1),(1,r,1),(1,1,r)$ a basis for $\mathbb{R}^3$?
+
+d.) Find the coordinates of $2-x$ relative to the basis $\{1-x,1+x\}$ for $P_1$. 
+
+
+e.) Suppose $\mathbf{D}$ represents the differentiation operator. For example $\mathbf{D}(x^2+8)=2x$. What is the null space of $\mathbf{D}$?
+
+f.) Show $T(x,y,z)=(y,0,z)$ is linear. Find the null space of $T$ and its dimension. Represent $T$ as a matrix. 
+
+
+g.) Show the following are not linear transformations. 
+
+\begin{enumerate}
+\item[i] $T(x,y)=(x^2, y^2)$
+\item[ii] $T(x,y,z)=(x+y+z,1)$
+\item[iii] $T(x)=(1,-1)$
+\item[iv] $T(x,y)=(xy,y,x)$
+\end{enumerate}
+
+g.) Let $T:X\rightarrow Y$ be a linear transformation and let $a_1,\dots,a_n$ be a basis for $X$. Show that $T$ is one-to-one if and only if $T(a_1), T(a_2),\dots T(a_n)$ are linearly independent.
+
+\pagebreak
+
+\textbf{Not Quiz 8 Solutions}
+
+a.) This is a silly question. $\{2,x,x^2,x^3\}$ works or $\{1+x,x,x^2,x^3\}$.
+
+b.) Yes. You can show that the two vectors are linearly independent and in the set $\mathcal{V}$. Also, the set $\mathcal{V}$ is a two-dimensional subspace because $x+y+z=0$ describes a plane. Two linearly independent vectors must in a two dimensional space must span the entire space, making these vectors a basis.
+
+c.) $r\neq 1, -2$. 
+
+d.) Solve $a(1-x)+b(1+x)=2-x$. 
+
+Algebra gives $a=1.5$ and $b=.5$. Therefore the coordinates of $2-x$ are $(1.5,0.5)$.
+
+e.) The null space is the set of all functions that have a derivative of zero. Thus, null($\mathbf{D}$)$=P_0$, all constant functions. 
+
+f.) Linearity of a function $f$ requires $f(a\mathbf{x})=af(\mathbf{x})$ and $f(\mathbf{x}+\mathbf{y})=f(\mathbf{x})+f(\mathbf{y})$.
+
+
+For our function $T(x,y,z)$, the first property will hold:
+
+$T(ax,ay,az)=(ay,0,az)=a\cdot (y,0,z)=aT(x,y,z)$. 
+
+
+The second property also holds. Consider $(x,y,z)+(u,v,w)$.
+
+$T(x+u,y+v,z+w)=(y+v,0,z+w)=(y,0,z)+(v,0,w)=T(x,y,z)+T(u,v,w)$.
+
+So this is linear.
+
+The null space will be the set of all vectors where $y,z=0$. This is the $x$-axis, and thus is one-dimensional space with a (one of many) basis $(1,0,0)$. 
+
+
+$$T=\left[ \begin{array}{ccc}
+0 & 1 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{array} \right]$$
+
+
+
+
+
+
+g.) For each of the functions, I give just one reason why they fail to be linear. There will be many other correct answers. 
+
+i fails. Just one example of $T$ failing linearity is the following. $T(1,1)+T(1,1)=(1,1)+(1,1)\neq T(2,2)=(4,4)$. 
+
+ii fails because $T(ax,ay,az)=(ax+ay+az,1)\neq aT(x,y,z)=(ax+ay+az,a)$ for $a\neq=1$.
+
+
+iii fails because $T(x+x^\prime)=(1,-1)\neq T(x)+T(x^\prime)=(2,-2)$.
+
+
+iv fails because $T(ax,ay)=(a^2xy,ay,ax)\neq aT(x,y)=(axy,ay,ax)$.
+
+
+\end{document}
+
+
+have a upper tri submatrix for cofactor ease
+Find det of .5*swap*
